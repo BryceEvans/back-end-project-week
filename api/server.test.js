@@ -22,6 +22,11 @@ describe('get / route handler', () => {
 })
 
 describe('/get notes', () => {
+  
+  // afterEach(async () => {
+  // await db('notes').truncate();
+  // })
+
   it('responds with 200', async () => {
     const response = await request(server).get('/notes');
     expect(response.status).toBe(200);
@@ -32,6 +37,6 @@ describe('/get notes', () => {
   })
   it('sends correct response object', async () => {
     const response = await request(server).get('/notes');
-    expect(response.body).toEqual([1]);
+    expect(response.body).toEqual([]);
   })
 })
