@@ -10,7 +10,12 @@ server.get('/', (req, res) => {
   res.status(200).json({ server: 'up and running!'});
 })
 
-server.get('/api/notes', async (req, res) => {
+// server.get('/notes', async (req, res) => {
+//   const rows = await notes.getAll();
+//   res.status(200).json(rows);
+// })
+
+server.get('/notes', async (req, res) => {
   const rows = await notes.getAll();
   res.status(200).json(rows);
 })

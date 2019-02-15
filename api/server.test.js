@@ -20,3 +20,18 @@ describe('get / route handler', () => {
     expect(response.type).toMatch(/json/i);
   })
 })
+
+describe('/get notes', () => {
+  it('responds with 200', async () => {
+    const response = await request(server).get('/notes');
+    expect(response.status).toBe(200);
+  })
+  it('responds with json', async () => {
+    const response = await request(server).get('/notes');
+    expect(response.type).toMatch(/json/i);
+  })
+  it('sends correct response object', async () => {
+    const response = await request(server).get('/notes');
+    expect(response.body).toEqual([1]);
+  })
+})
