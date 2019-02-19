@@ -14,6 +14,6 @@ function getAll() {
   return db('notes');
 }
 
-function findById(id) {
-  return null;
+async function findById(id) {
+  return db('notes').where('id', id);
 }
