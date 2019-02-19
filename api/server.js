@@ -18,10 +18,11 @@ server.get('/notes', async (req, res) => {
 server.get('/notes/:id', async (req, res) => {
   const { id } = req.params;
   const response = await notes.findById(id);
+
   if (response.length > 0) {
     res.status(200).json(response);
   } else {
-    res.status(404).status({ error: "note with specified ID does not exist" })
+    res.status(404).json({ error: "note with specified ID does not exist" })
   }
 })
 
