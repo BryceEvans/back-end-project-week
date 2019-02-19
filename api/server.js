@@ -2,9 +2,12 @@ const express = require('express');
 
 const notes = require('../notes/notesModel');
 
+const cors = require('cors');
+
 const server = express();
 
 server.use(express.json());
+server.use(cors());
 
 server.get('/', (req, res) => {
   res.status(200).json({ server: 'up and running!'});
