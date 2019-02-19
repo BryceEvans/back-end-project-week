@@ -4,6 +4,7 @@ module.exports = {
   insert,
   getAll,
   findById,
+  update,
 };
 
 async function insert(note) {
@@ -16,4 +17,8 @@ function getAll() {
 
 async function findById(id) {
   return db('notes').where('id', id);
+}
+
+async function update(id, changes) {
+  return db('notes').where('id', id).update(changes);
 }
