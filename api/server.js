@@ -49,5 +49,15 @@ server.put('/notes/:id', async (req, res) => {
   }
 })
 
+server.delete('/notes/:id', async (req, res) => {
+  const { id } = req.params;
+  const response = await notes.remove(id);
+
+  if (response) {
+    res.status(200).json(response);
+  } else {
+    res.status(404).json({ error: "note with specified ID does not exist" });
+  }
+})
 
 module.exports = server;

@@ -5,13 +5,14 @@ module.exports = {
   getAll,
   findById,
   update,
+  remove
 };
 
 async function insert(note) {
   return db('notes').insert(note);
 }
 
-function getAll() {
+async function getAll() {
   return db('notes');
 }
 
@@ -21,4 +22,8 @@ async function findById(id) {
 
 async function update(id, changes) {
   return db('notes').where('id', id).update(changes);
+}
+
+async function remove(id) {
+  return db('notes').where('id', id).del();
 }
