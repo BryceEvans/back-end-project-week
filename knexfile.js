@@ -3,6 +3,8 @@
 module.exports = {
 
   development: {
+    // client: 'pg',
+    // connection: 'postgres://localhost/notes',
     client: 'sqlite3',
     connection: {
       filename: './data/notes.db3'
