@@ -38,10 +38,10 @@ production: {
   //   filename: './data/notes.db3'
   // },
   migrations: {
-    directory: __dirname + '/data/migrations',
+    directory: './data/migrations',
   },
   seeds: {
-    directory: __dirname + '/data/seeds',
+    directory: './data/seeds',
   },
   ssl: true
 },
