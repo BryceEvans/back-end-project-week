@@ -42,7 +42,8 @@ production: {
   },
   seeds: {
     directory: __dirname + '/data/seeds',
-  }
+  },
+  ssl: true
 },
 
 };
