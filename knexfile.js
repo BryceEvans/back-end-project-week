@@ -9,7 +9,6 @@ module.exports = {
     // connection: {
     //   filename: './data/notes.db3'
     // },
-    useNullAsDefault: true,
     migrations: {
       directory: './data/migrations',
     },
@@ -23,7 +22,6 @@ module.exports = {
   connection: {
     filename: './data/test.db3',
   },
-  useNullAsDefault: true,
   migrations: {
     directory: './data/migrations',
   },
@@ -39,12 +37,11 @@ production: {
   // connection: {
   //   filename: './data/notes.db3'
   // },
-  useNullAsDefault: true,
   migrations: {
-    directory: './data/migrations',
+    directory: __dirname + '/data/migrations',
   },
   seeds: {
-    directory: './data/seeds',
+    directory: __dirname + '/data/seeds',
   }
 },
 
