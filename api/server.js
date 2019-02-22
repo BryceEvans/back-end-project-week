@@ -13,12 +13,12 @@ server.get('/', (req, res) => {
   res.status(200).json({ server: 'up and running!'});
 })
 
-server.get('/notes', async (req, res) => {
+server.get('/note/get/all', async (req, res) => {
   const rows = await notes.getAll();
   res.status(200).json(rows);
 })
 
-server.get('/notes/:id', async (req, res) => {
+server.get('/note/get/:id', async (req, res) => {
   const { id } = req.params;
   const response = await notes.findById(id);
 
@@ -29,7 +29,7 @@ server.get('/notes/:id', async (req, res) => {
   }
 })
 
-server.post('/notes', async (req, res) => {
+server.post('/note/create', async (req, res) => {
   const noteData = req.body;
 
   if (noteData.title && noteData.textBody) {
@@ -40,7 +40,7 @@ server.post('/notes', async (req, res) => {
   }
 })
 
-server.put('/notes/:id', async (req, res) => {
+server.put('/note/edit/:id', async (req, res) => {
   const { id } = req.params;
   const note = req.body;
   const response = await notes.update(id, note);
@@ -52,7 +52,7 @@ server.put('/notes/:id', async (req, res) => {
   }
 })
 
-server.delete('/notes/:id', async (req, res) => {
+server.delete('/note/delete/:id', async (req, res) => {
   const { id } = req.params;
   const response = await notes.remove(id);
 
