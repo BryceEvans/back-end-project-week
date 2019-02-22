@@ -32,36 +32,20 @@ module.exports = {
   },
 },
 
-  // staging: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'my_db',
-  //     user:     'username',
-  //     password: 'password'
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10
-  //   },
-  //   migrations: {
-  //     tableName: 'knex_migrations'
-  //   }
+production: {
+  client: 'pg',
+  connection: 'postgres://ymkpbbmraakuhn:0e0108134c9ceb933669fa7dfc5ca8ef6a05d45679ffabc05c774a6acce319fd@ec2-54-221-253-228.compute-1.amazonaws.com:5432/dfpud2rtn8p0v3',
+  // client: 'sqlite3',
+  // connection: {
+  //   filename: './data/notes.db3'
   // },
-
-  production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
+  useNullAsDefault: true,
+  migrations: {
+    directory: './data/migrations',
+  },
+  seeds: {
+    directory: './data/seeds',
   }
+},
 
 };
